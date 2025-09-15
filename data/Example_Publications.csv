@@ -1,0 +1,6 @@
+Cites,First/Last Authorship,Authors,Title,Year,Autorenschaft,Affiliation
+10,True,"J Doe, A Smith","Novel Insights into Data Science",2023,Erst-/Letztautorenschaft UMO,"Institute of Data Science, University A"
+5,False,"B Lee, C Kim, J Doe","Machine Learning for Healthcare",2022,Co-Autorenschaft UMO,"Institute of Data Science, University B"
+2,True,"A Smith, J Doe","Statistical Methods in Genomics",2021,Erst-/Letztautorenschaft UMO,"Institute of Genomics, University A"
+8,False,"L Wang, J Doe, M Patel","Artificial Intelligence in Finance",2023,sonstige Affiliations,"Finance Institute, Tech University"
+3,False,"J Doe, M Patel","Big Data Analytics Trends",2022,Co-Autorenschaft UMO,"Institute of Data Science, University C"
