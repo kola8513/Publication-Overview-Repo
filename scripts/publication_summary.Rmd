@@ -1,0 +1,133 @@
+---
+title: "Publication Overview / Publikationsübersicht"
+author: "Your Name / Ihr Name"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+# Publication Summary (English)
+Below is the code and explanation for summarizing and visualizing publication data in English.
+
+```{r setup-en, include=FALSE}
+# Hide code output and set up chunk options
+knitr::opts_chunk$set(echo = TRUE)
+# Load necessary libraries
+library(ggplot2)   # for plotting
+library(dplyr)     # for data manipulation
+library(forcats)   # for working with categorical variables
+library(ggpubr)    # for publication-ready themes
+```
+
+```{r read-data-en}
+# Read the publication data from CSV.
+# Make sure the path points to the correct CSV file location!
+dat <- read.csv("../data/Example_Publications.csv", header = TRUE, sep = ",")
+
+# Filter publications from 2021 onwards
+df <- dat %>% filter(Year >= 2021)
+
+# Make sure the 'Autorenschaft' column is treated as an ordered categorical variable
+df <- df %>% mutate(
+  Autorenschaft = fct_relevel(
+    Autorenschaft,
+    "Erst-/Letztautorenschaft UMO",
+    "Co-Autorenschaft UMO",
+    "sonstige Affiliations"
+  )
+)
+```
+
+```{r plot-en}
+# Create x-axis labels for all available years
+x_axis_labels <- seq(min(df$Year, na.rm = TRUE), max(df$Year, na.rm = TRUE))
+
+# Build the bar plot for publication summary
+plot_en <- ggplot(df, aes(x = Year, fill = Autorenschaft)) +
+  geom_bar(position = "stack", width = 0.4) +   # stacked bar chart
+  theme_pubclean() +                            # clean, publication-ready theme
+  labs(
+    subtitle = paste("Publications", min(df$Year), "-", max(df$Year)),
+    x = "",                                     # x-axis label blank for cleaner look
+    y = "Number"
+  ) +
+  scale_fill_manual(values = c("#00519e", "#318CE7", "#99CCFF")) +  # set custom colors
+  theme(
+    text = element_text(size = 12),
+    legend.title = element_blank(),             # no legend title
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12)  # angled x-axis labels
+  ) +
+  scale_x_continuous(labels = x_axis_labels, breaks = x_axis_labels) +
+  guides(fill = guide_legend(title = NULL))     # hide fill legend title
+
+# Display the plot
+plot_en
+```
+
+---
+
+# Publikationsübersicht (Deutsch)
+Hier ist der gleiche Code und die Erklärung, aber auf Deutsch.
+
+```{r setup-de, include=FALSE}
+# Chunk-Optionen setzen und Bibliotheken laden
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)   # zum Plotten
+library(dplyr)     # für die Datenmanipulation
+library(forcats)   # für die Arbeit mit Kategorien
+library(ggpubr)    # für publikationsfertige Themes
+```
+
+```{r read-data-de}
+# Publikationsdaten aus der CSV-Datei einlesen.
+# Achten Sie darauf, dass der Pfad zur richtigen CSV-Datei zeigt!
+dat <- read.csv("../data/Example_Publications.csv", header = TRUE, sep = ",")
+
+# Veröffentlichungen ab dem Jahr 2021 filtern
+df <- dat %>% filter(Year >= 2021)
+
+# Die Spalte 'Autorenschaft' als geordnete Kategorie behandeln
+df <- df %>% mutate(
+  Autorenschaft = fct_relevel(
+    Autorenschaft,
+    "Erst-/Letztautorenschaft UMO",
+    "Co-Autorenschaft UMO",
+    "sonstige Affiliations"
+  )
+)
+```
+
+```{r plot-de}
+# x-Achsen-Beschriftungen für alle verfügbaren Jahre erstellen
+x_axis_labels <- seq(min(df$Year, na.rm = TRUE), max(df$Year, na.rm = TRUE))
+
+# Den Balkendiagramm für die Publikationsübersicht erstellen
+plot_de <- ggplot(df, aes(x = Year, fill = Autorenschaft)) +
+  geom_bar(position = "stack", width = 0.4) +   # gestapeltes Balkendiagramm
+  theme_pubclean() +                            # sauberes, publikationsfertiges Design
+  labs(
+    subtitle = paste("Publikationen", min(df$Year), "-", max(df$Year)),
+    x = "",                                     # x-Achsen-Beschriftung leer für ein klares Layout
+    y = "Anzahl"
+  ) +
+  scale_fill_manual(values = c("#00519e", "#318CE7", "#99CCFF")) +  # benutzerdefinierte Farben
+  theme(
+    text = element_text(size = 12),
+    legend.title = element_blank(),             # keine Legendentitel
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 12)  # x-Achsen-Beschriftungen angeschrägt
+  ) +
+  scale_x_continuous(labels = x_axis_labels, breaks = x_axis_labels) +
+  guides(fill = guide_legend(title = NULL))     # Legendentitel ausblenden
+
+# Diagramm anzeigen
+plot_de
+```
+
+---
+
+<!--
+Tips for beginners:
+- Always check and update the file path to your CSV file before running the script.
+- Install any missing packages in your R console: install.packages("ggplot2"); etc.
+- Use RStudio for best experience with RMarkdown files.
+- You can knit the file to PDF or HTML to see your results.
+-->
