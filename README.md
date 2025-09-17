@@ -48,6 +48,54 @@ install.packages(c("ggplot2", "dplyr", "forcats", "ggpubr", "readr", "tidyverse"
 - Ersetzen Sie `Example_Publications.csv` durch Ihre eigenen Publikationsdaten.
 - Bearbeiten Sie das Skript `publication_summary.Rmd` nach Ihren Wünschen.
 
+## 🎓 Erweiterung für Machine Learning Zoomcamp
+
+**Frage: Soll ich ein neues Repository erstellen oder dieses Repository erweitern?**
+
+> 📖 **Vollständiger Leitfaden**: Siehe [ML_ZOOMCAMP_GUIDE.md](ML_ZOOMCAMP_GUIDE.md) für eine detaillierte Entscheidungshilfe mit Setup-Anweisungen.
+
+### Empfehlung: Neues Repository erstellen
+
+Für die Teilnahme am Machine Learning Zoomcamp empfehlen wir die **Erstellung eines neuen, dedizierten Repositories**. Hier sind die Gründe:
+
+#### ✅ Vorteile eines neuen Repositories:
+- **Klare Trennung**: Publikationsanalyse vs. ML-Lernmaterialien
+- **Focused Scope**: Speziell für ML Zoomcamp optimiert
+- **Bessere Organisation**: Homework und Notes in logischer Struktur
+- **Portfolio-Wert**: Separates Repository zeigt spezifische ML-Kompetenz
+- **Kollaboration**: Einfacher mit anderen Zoomcamp-Teilnehmern zu teilen
+
+#### Vorgeschlagene Verzeichnisstruktur für neues ML Zoomcamp Repository:
+```
+ml-zoomcamp-2024/
+├── README.md
+├── week-01/
+│   ├── homework/
+│   └── notes/
+├── week-02/
+│   ├── homework/
+│   └── notes/
+├── projects/
+│   ├── midterm-project/
+│   └── capstone-project/
+├── resources/
+└── certificates/
+```
+
+### Alternative: Erweiterung dieses Repositories
+
+Falls Sie dennoch dieses Repository erweitern möchten:
+
+```
+├── data/
+├── scripts/
+├── ml-zoomcamp/          # Neuer Ordner
+│   ├── homeworks/
+│   ├── notes/
+│   └── projects/
+└── README.md
+```
+
 ## 📚 Lizenz
 
 Dieses Repository steht unter der MIT-Lizenz.
@@ -107,6 +155,54 @@ install.packages(c("ggplot2", "dplyr", "forcats", "ggpubr", "readr", "tidyverse"
 
 - Replace `Example_Publications.csv` with your own publication data.
 - Edit `publication_summary.Rmd` to adjust the analysis and visualization.
+
+## 🎓 Extending for Machine Learning Zoomcamp
+
+**Question: Should I create a new repository or extend this existing repository?**
+
+> 📖 **Complete Guide**: See [ML_ZOOMCAMP_GUIDE.md](ML_ZOOMCAMP_GUIDE.md) for detailed decision matrix and setup instructions.
+
+### Recommendation: Create a New Repository
+
+For participating in a Machine Learning Zoomcamp, we recommend **creating a new, dedicated repository**. Here's why:
+
+#### ✅ Benefits of a New Repository:
+- **Clear Separation**: Publication analysis vs. ML learning materials
+- **Focused Scope**: Specifically optimized for ML Zoomcamp
+- **Better Organization**: Homework and notes in logical structure
+- **Portfolio Value**: Separate repository showcases specific ML competency
+- **Collaboration**: Easier to share with other zoomcamp participants
+
+#### Suggested Directory Structure for New ML Zoomcamp Repository:
+```
+ml-zoomcamp-2024/
+├── README.md
+├── week-01/
+│   ├── homework/
+│   └── notes/
+├── week-02/
+│   ├── homework/
+│   └── notes/
+├── projects/
+│   ├── midterm-project/
+│   └── capstone-project/
+├── resources/
+└── certificates/
+```
+
+### Alternative: Extending This Repository
+
+If you still prefer to extend this repository:
+
+```
+├── data/
+├── scripts/
+├── ml-zoomcamp/          # New folder
+│   ├── homeworks/
+│   ├── notes/
+│   └── projects/
+└── README.md
+```
 
 ## 📚 License
 
